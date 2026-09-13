@@ -1,0 +1,13 @@
+/build*/
+/release/
+/.cache/
+__pycache__/
+desktop.ini
+/identity.pem
+/madoka.conf
+/lab/
+*.lock
+*.state/
+*.status
+repomix-output.xml
+desktop.ini
