@@ -136,6 +136,13 @@ void test_load_config_with_shared_ports() {
     std::filesystem::remove(cfg_path, ec);
 }
 
+void test_default_state_directory() {
+    auto state_dir = default_state_directory();
+    assert(!state_dir.empty());
+    std::string filename = state_dir.filename().string();
+    assert(filename == "madoka" || filename == ".madoka");
+}
+
 int main() {
     test_parse_port_list_special_keywords();
     test_parse_port_list_individual_ports();
@@ -143,6 +150,7 @@ int main() {
     test_parse_port_list_invalid();
     test_is_port_shared();
     test_load_config_with_shared_ports();
+    test_default_state_directory();
     std::cout << "All test_config assertions passed.\n";
     return 0;
 }

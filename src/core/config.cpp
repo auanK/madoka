@@ -367,16 +367,16 @@ std::filesystem::path default_state_directory() {
 #if defined(_WIN32)
     if (const char* local_app = std::getenv("LOCALAPPDATA")) {
         if (*local_app != '\0') {
-            return std::filesystem::path(local_app) / "Madoka";
+            return std::filesystem::path(local_app) / "madoka";
         }
     }
     if (const char* user_profile = std::getenv("USERPROFILE")) {
         if (*user_profile != '\0') {
             return std::filesystem::path(user_profile) / "AppData" / "Local" /
-                   "Madoka";
+                   "madoka";
         }
     }
-    return "Madoka";
+    return "madoka";
 #else
     if (const char* xdg_state = std::getenv("XDG_STATE_HOME")) {
         if (*xdg_state != '\0') {
